@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-73m+u=9__^!4#v1owkhb5#3%ii!30k6g)$)zc2@xei%9swka)3'
+# SECRET_KEY = 'django-insecure-73m+u=9__^!4#v1owkhb5#3%ii!30k6g)$)zc2@xei%9swka)3'
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-juandavidc08-djangoblog-l3narp459c9.ws-eu110.gitpod.io', '.herokuapp.com']
 
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'codestar.urls'
@@ -94,7 +95,8 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
-    "https://*.herokuapp.com"
+    "https://*.herokuapp.com",
+    'https://8000-juandavidc08-djangoblog-l3narp459c9.ws-eu110.gitpod.io',
 ]
 
 # Password validation
